@@ -29,7 +29,7 @@ function round(com, hum){
             } else if(com == "paper"){
                 console.log("Paper beats rock, you lose!");
                 computerScore++;
-            } else if(com == "Scissors"){
+            } else if(com == "scissors"){
                 console.log("Rock beats scissors, you win!");
                 humanScore++;
             } else {
@@ -43,7 +43,7 @@ function round(com, hum){
             } else if(com == "paper"){
                 console.log("Scisscors beats paper, you win!");
                 humanScore++;
-            } else if(com == "Scissors"){
+            } else if(com == "scissors"){
                 console.log("It's a tie!");
             } else {
                 console.log("invalid choice");
@@ -55,7 +55,7 @@ function round(com, hum){
                 humanScore++;
             } else if(com == "paper"){
                 console.log("It's a tie!");
-            } else if(com == "Scissors"){
+            } else if(com == "scissors"){
                 console.log("Scissors beats paper, you lose!");
                 computerScore++;
             } else {

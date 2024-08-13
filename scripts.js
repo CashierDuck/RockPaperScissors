@@ -35,19 +35,21 @@ function round(com, hum){
             } else {
                 console.log("invalid choice");
             }
+            showScore();
             break;
         case "scissors":
             if(com == "rock"){
                 console.log("Rock beats scissors, you lose!");
                 computerScore++;
             } else if(com == "paper"){
-                console.log("Scisscors beats paper, you win!");
+                console.log("Scissors beats paper, you win!");
                 humanScore++;
             } else if(com == "scissors"){
                 console.log("It's a tie!");
             } else {
                 console.log("invalid choice");
             }
+            showScore();
             break;
         case "paper":
             if(com == "rock"){
@@ -61,6 +63,7 @@ function round(com, hum){
             } else {
                 console.log("invalid choice");
             }
+            showScore();
             break;
         default:
             console.log("invalid choice");
@@ -68,19 +71,24 @@ function round(com, hum){
 
 }
 
+function showScore(){
+    console.log("Human: " + humanScore + " | Computer: "+ computerScore);
+}
+
 function playGame(){
     for(let i = 0; i < 5; i++){
         round(getComputerChoice(), getHumanChoice());
     }
     if(humanScore > computerScore){
-        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
         console.log("A W for the humans!");
+        showScore();
     } else if (humanScore < computerScore){
-        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
        console.log("The Computer Wins!");
+       showScore();
     } else {
-        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
-        console.log("It's a tie!")
+        console.log("It's a tie!");
+        showScore();
+        
     }
 }
 

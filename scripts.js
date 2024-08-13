@@ -22,42 +22,48 @@ let humanScore = 0;
 let computerScore = 0;
 
 function round(com, hum){
-    switch(humanChoice){
+    switch(hum){
         case "rock": 
             if(com == "rock"){
-                console.log("Its a tie!")
+                console.log("Its a tie!");
             } else if(com == "paper"){
-                console.log("Paper beats rock, you lose!")
+                console.log("Paper beats rock, you lose!");
+                computerScore++;
             } else if(com == "Scissors"){
-                console.log("Rock beats scissors, you win!")
+                console.log("Rock beats scissors, you win!");
+                humanScore++;
             } else {
-                console.log("invalid choice")
+                console.log("invalid choice");
             }
             break;
         case "scissors":
             if(com == "rock"){
-                console.log("Rock beats scissors, you lose!")
+                console.log("Rock beats scissors, you lose!");
+                computerScore++;
             } else if(com == "paper"){
-                console.log("Scisscors beats paper, you win!")
+                console.log("Scisscors beats paper, you win!");
+                humanScore++;
             } else if(com == "Scissors"){
-                console.log("It's a tie!")
+                console.log("It's a tie!");
             } else {
-                console.log("invalid choice")
+                console.log("invalid choice");
             }
             break;
         case "paper":
             if(com == "rock"){
-                console.log("Paper beats rock, you win!")
+                console.log("Paper beats rock, you win!");
+                humanScore++;
             } else if(com == "paper"){
-                console.log("It's a tie!")
+                console.log("It's a tie!");
             } else if(com == "Scissors"){
-                console.log("Scissors beats paper, you lose!")
+                console.log("Scissors beats paper, you lose!");
+                computerScore++;
             } else {
-                console.log("invalid choice")
+                console.log("invalid choice");
             }
             break;
         default:
-            console.log("invalid choice")
+            console.log("invalid choice");
     }
 
 }
@@ -67,9 +73,9 @@ function playGame(){
         round(getComputerChoice(), getHumanChoice());
     }
     if(humanScore < computerScore){
-        alert("A W for the humans!");
+        console.log("A W for the humans!");
     } else {
-        alert("The Computer Wins!");
+       console.log("The Computer Wins!");
     }
 }
 

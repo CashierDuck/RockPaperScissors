@@ -69,13 +69,18 @@ function round(com, hum){
 }
 
 function playGame(){
-    for(let i = 0; i <=5; i++){
+    for(let i = 0; i < 5; i++){
         round(getComputerChoice(), getHumanChoice());
     }
-    if(humanScore < computerScore){
+    if(humanScore > computerScore){
+        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
         console.log("A W for the humans!");
-    } else {
+    } else if (humanScore < computerScore){
+        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
        console.log("The Computer Wins!");
+    } else {
+        console.log("Human: " + humanScore + " | Computer: "+ computerScore);
+        console.log("It's a tie!")
     }
 }
 

@@ -35,18 +35,15 @@ button {
     outline: none;
 }
 
-.rockCom {
-    display: none;
-}
-
-.paperCom {
-    display: none;
-}
-
-.scissorsCom {
+.hidden {
     display: none;
 }
 
 .visible {
     display: block;
+}
+
+.vs {
+    text-align: center;
+    color: white;
 }

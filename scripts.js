@@ -2,17 +2,21 @@ let ranChoice = "";
 
 const image = document.querySelector(".comSelection");
 
+const showRock = document.getElementById("rockCom");
+const showPaper = document.getElementById("paperCom");
+const showScissors = document.getElementById("scissorsCom");
+
 function getComputerChoice() {
     let ranCalc = Math.random();
     
     if (ranCalc > 0 && ranCalc <= 0.33){
-        const img = document.createElement("img");
-        img.textContent = ""
-        
+        rockCom.classList.toggle("visible");
         return ranChoice = "rock";
     } else if (ranCalc > 0.33 && ranCalc <= 0.66){
+        paperCom.classList.toggle("visible");
         return ranChoice = "paper";
     } else {
+        scissorsCom.classList.toggle("visible");
         return ranChoice = "scissors";
     }
 }
@@ -20,24 +24,23 @@ function getComputerChoice() {
 const result = document.querySelector(".result");
 const resultText = document.createElement("span");
 
+
 let humanChoice = "";
 const btn = document.querySelectorAll("button");
+
 btn.forEach((button) => {
     button.addEventListener("click", () => {
 
     switch(button.id){
         case "rock":
-            rockCom.classList.toggle("visible");
             round(getComputerChoice(), "rock");
             break;
 
         case "paper":
-            paperCom.classList.toggle("visible");
             round(getComputerChoice(), "paper");
             break;
 
         case "scissors":
-            scissorsCom.classList.toggle("visible");
             round(getComputerChoice(), "scissors");
             break;
     }

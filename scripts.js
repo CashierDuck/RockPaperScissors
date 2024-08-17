@@ -3,20 +3,27 @@ let ranChoice = "";
 const image = document.querySelector(".comSelection");
 
 const showBulb = document.getElementById("bulbCom");
-const showChae = document.getElementById("charCom");
+const showChar = document.getElementById("charCom");
 const showSquirt = document.getElementById("squirtCom");
 
+function hideImages(){
+    showBulb.classList.remove("visible");
+    showChar.classList.remove("visible");
+    showSquirt.classList.remove("visible");
+}
+
 function getComputerChoice() {
+    hideImages()
     let ranCalc = Math.random();
     
     if (ranCalc > 0 && ranCalc <= 0.33){
-        bulbCom.classList.toggle("visible");
+        bulbCom.classList.add("visible");
         return ranChoice = "bulbasaur";
     } else if (ranCalc > 0.33 && ranCalc <= 0.66){
-        charCom.classList.toggle("visible");
+        charCom.classList.add("visible");
         return ranChoice = "charmander";
     } else {
-        squirtCom.classList.toggle("visible");
+        squirtCom.classList.add("visible");
         return ranChoice = "squirtle";
     }
 }
@@ -51,6 +58,9 @@ btn.forEach((button) => {
 let humanScore = 0;
 let computerScore = 0;
 
+const score = document.querySelector(".score");
+const scoreText = document.createElement("span");
+
 function round(com, hum){
 
 
@@ -67,7 +77,6 @@ function round(com, hum){
             } else {
                 resultText.textContent = "invalid choice";
             }
-            showScore();
             break;
         case "squirtle":
             if(com == "bulbasaur"){
@@ -81,7 +90,6 @@ function round(com, hum){
             } else {
                 resultText.textContent = "invalid choice";
             }
-            showScore();
             break;
         case "charmander":
             if(com == "bulbasaur"){
@@ -95,7 +103,6 @@ function round(com, hum){
             } else {
                 resultText.textContent = "invalid choice";
             }
-            showScore();
             break;
         default:
            resultText.textContent = "invalid choice hoe";
@@ -103,28 +110,12 @@ function round(com, hum){
     }
     console.log(resultText);
     result.appendChild(resultText);
+
+    scoreText.textContent = `Trainer: ${humanScore} | Rival: ${computerScore}`;
+    score.appendChild(scoreText);
+
 }
 
-function showScore(){
-    console.log("Human: " + humanScore + " | Computer: "+ computerScore);
-}
-
-function playGame(){
-    for(let i = 0; i < 5; i++){
-        round(getComputerChoice(), getHumanChoice());
-    }
-    if(humanScore > computerScore){
-        console.log("A W for the humans!");
-        showScore();
-    } else if (humanScore < computerScore){
-       console.log("The Computer Wins!");
-       showScore();
-    } else {
-        console.log("It's a tie!");
-        showScore();
-        
-    }
-}
 
 
 // switch selector

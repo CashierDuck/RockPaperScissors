@@ -2,22 +2,22 @@ let ranChoice = "";
 
 const image = document.querySelector(".comSelection");
 
-const showRock = document.getElementById("rockCom");
-const showPaper = document.getElementById("paperCom");
-const showScissors = document.getElementById("scissorsCom");
+const showBulb = document.getElementById("bulbCom");
+const showChae = document.getElementById("charCom");
+const showSquirt = document.getElementById("squirtCom");
 
 function getComputerChoice() {
     let ranCalc = Math.random();
     
     if (ranCalc > 0 && ranCalc <= 0.33){
-        rockCom.classList.toggle("visible");
-        return ranChoice = "rock";
+        bulbCom.classList.toggle("visible");
+        return ranChoice = "bulbasaur";
     } else if (ranCalc > 0.33 && ranCalc <= 0.66){
-        paperCom.classList.toggle("visible");
-        return ranChoice = "paper";
+        charCom.classList.toggle("visible");
+        return ranChoice = "charmander";
     } else {
-        scissorsCom.classList.toggle("visible");
-        return ranChoice = "scissors";
+        squirtCom.classList.toggle("visible");
+        return ranChoice = "squirtle";
     }
 }
 
@@ -32,16 +32,16 @@ btn.forEach((button) => {
     button.addEventListener("click", () => {
 
     switch(button.id){
-        case "rock":
-            round(getComputerChoice(), "rock");
+        case "bulbasaur":
+            round(getComputerChoice(), "bulbasaur");
             break;
 
-        case "paper":
-            round(getComputerChoice(), "paper");
+        case "charmander":
+            round(getComputerChoice(), "charmander");
             break;
 
-        case "scissors":
-            round(getComputerChoice(), "scissors");
+        case "squirtle":
+            round(getComputerChoice(), "squirtle");
             break;
     }
     });
@@ -55,43 +55,42 @@ function round(com, hum){
 
 
     switch(hum){
-        case "rock": 
-            if(com == "rock"){
+        case "bulbasaur": 
+            if(com == "bulbasaur"){
                 resultText.textContent = "It's a tie!"
-                
-            } else if(com == "paper"){
-                resultText.textContent = "Paper beats rock, you lose!";
+            } else if(com == "charmander"){
+                resultText.textContent = "Your opponent chose Charmander, you lose!";
                 computerScore++;
-            } else if(com == "scissors"){
-                resultText.textContent = "Rock beats scissors, you win!";
+            } else if(com == "squirtle"){
+                resultText.textContent = "Your opponent chose Squirtle, you win!";
                 humanScore++;
             } else {
                 resultText.textContent = "invalid choice";
             }
             showScore();
             break;
-        case "scissors":
-            if(com == "rock"){
-                resultText.textContent = "Rock beats scissors, you lose!";
+        case "squirtle":
+            if(com == "bulbasaur"){
+                resultText.textContent = "Your opponent chose Bulbasaur, you lose!";
                 computerScore++;
-            } else if(com == "paper"){
-                resultText.textContent = "Scissors beats paper, you win!";
+            } else if(com == "charmander"){
+                resultText.textContent = "Your opponent chose Charmander, you win!";
                 humanScore++;
-            } else if(com == "scissors"){
+            } else if(com == "squirtle"){
                 resultText.textContent ="It's a tie!";
             } else {
                 resultText.textContent = "invalid choice";
             }
             showScore();
             break;
-        case "paper":
-            if(com == "rock"){
-                resultText.textContent = "Paper beats rock, you win!";
+        case "charmander":
+            if(com == "bulbasaur"){
+                resultText.textContent = "Your opponent chose Bulbasaur, you win!";
                 humanScore++;
-            } else if(com == "paper"){
+            } else if(com == "charmander"){
                 resultText.textContent = "It's a tie!";
-            } else if(com == "scissors"){
-                resultText.textContent = "Scissors beats paper, you lose!";
+            } else if(com == "squirtle"){
+                resultText.textContent = "Your opponent chose Squirtle, you lose!";
                 computerScore++;
             } else {
                 resultText.textContent = "invalid choice";

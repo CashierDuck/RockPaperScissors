@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors | Mike Rubio | The Odin Project</title>
+    <title>Pokémon Battle | Mike Rubio | The Odin Project</title>
     <link rel="stylesheet" href="styles.css">
 
     <script src="scripts.js" defer></script>
@@ -12,20 +12,26 @@
 
 <body>
 
-    <h1 id="title">Rock Paper Scissors</h1>
+    <div class="top">
+        <img id="pokeball" src="images/pokeball.jpg" height="100px" width="100px">
+        <h1 id="title">Pokémon Battle</h1>
+        <img id="pokeball" src="images/pokeball.jpg" height="100px" width="100px">
+    </div>
+
+    <h3 id="header">Choose your Pokémon!</h1>
 
     <div class="choices">
-        <button id="rock" class="btn zoom"><img src="/images/rock.jpg" height="100px" width="100px"></button>
-        <button id="paper" class="btn zoom"><img src="/images/paper.jpg" height="100px" width="100px"></button>
-        <button id="scissors" class="btn zoom"><img src="/images/scissors.jpg" height="100px" width="100px"></button>
+        <button id="bulbasaur" class="btn zoom"><img src="/images/bulbasaur.jpg" height="100px" width="100px"></button>
+        <button id="charmander" class="btn zoom"><img src="/images/charmander.jpg" height="100px" width="100px"></button>
+        <button id="squirtle" class="btn zoom"><img src="/images/squirtle.jpg" height="100px" width="100px"></button>
     </div>
 
     <div class="vs">VS</div>
 
     <div class = "comSelection">
-        <img class="hidden" id="rockCom" src="/images/rock.jpg" height="100px" width="100px">
-        <img class="hidden" id="paperCom" src="/images/paper.jpg" height="100px" width="100px">
-        <img class="hidden" id="scissorsCom" src="/images/scissors.jpg" height="100px" width="100px">
+        <img class="hidden" id="bulbCom" src="/images/bulbasaur.jpg" height="100px" width="100px">
+        <img class="hidden" id="charCom" src="/images/charmander.jpg" height="100px" width="100px">
+        <img class="hidden" id="squirtCom" src="/images/squirtle.jpg" height="100px" width="100px">
 
     </div>
 

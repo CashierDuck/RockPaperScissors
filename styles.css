@@ -78,3 +78,13 @@ button {
     text-align: center;
     padding: 10px;
 }
+
+.winner {
+    text-align: center;
+    padding: 10px;
+}
+
+.restart {
+    text-align: center;
+    padding: 10px;
+}

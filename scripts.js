@@ -35,6 +35,11 @@ const resultText = document.createElement("span");
 let humanChoice = "";
 const btn = document.querySelectorAll("button");
 
+
+let humanScore = 0;
+let computerScore = 0;
+
+
 btn.forEach((button) => {
     button.addEventListener("click", () => {
 
@@ -55,11 +60,11 @@ btn.forEach((button) => {
 
 });
 
-let humanScore = 0;
-let computerScore = 0;
-
 const score = document.querySelector(".score");
 const scoreText = document.createElement("span");
+
+const winner = document.querySelector(".winner");
+const winnerText = document.createElement("span");
 
 function round(com, hum){
 
@@ -112,10 +117,44 @@ function round(com, hum){
     result.appendChild(resultText);
 
     scoreText.textContent = `Trainer: ${humanScore} | Rival: ${computerScore}`;
+    checkWinner();
     score.appendChild(scoreText);
 
 }
 
+function showRestart(){
+    const link = element.querySelector(".restart");
+    var a = document.createElement("a");
+    var linkText=document.createTextNode("click to restart.")
+    a.append(linkText);
+    a.title = "restart"
+    a.href = "index.html"
+    restart.appendChild(a);
+}
 
+function checkWinner() {
+    if (humanScore >= 5 || computerScore >= 5) {
+        btn.forEach((button) => {
+            button.disabled = true;
+        });
+    }
 
-// switch selector
+    const restart = document.querySelector(".restart");  // Corrected this line
+    var a = document.createElement("a");
+    var linkText = document.createTextNode("click to restart.");
+    a.appendChild(linkText);
+    a.title = "restart";
+    a.href = "index.html";
+    
+    if (humanScore === 5) {
+        winnerText.textContent = "You got 5 K.O's. You Win!";
+        winner.appendChild(winnerText);
+        restart.appendChild(a);
+    } else if (computerScore === 5) {
+        winnerText.textContent = "Rival got 5 K.O's. You Lose!";
+        winner.appendChild(winnerText);
+        restart.appendChild(a);
+    }
+
+}
+

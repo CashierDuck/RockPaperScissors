@@ -1,3 +1,3 @@
 # RockPaperScissors
 
-Rock Paper Scissors with Javascript
+Rock Paper Scissors with Javascript but with pokemon instead

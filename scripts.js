@@ -1,9 +1,14 @@
 let ranChoice = "";
 
+const image = document.querySelector(".comSelection");
+
 function getComputerChoice() {
     let ranCalc = Math.random();
     
     if (ranCalc > 0 && ranCalc <= 0.33){
+        const img = document.createElement("img");
+        img.textContent = ""
+        
         return ranChoice = "rock";
     } else if (ranCalc > 0.33 && ranCalc <= 0.66){
         return ranChoice = "paper";
@@ -12,63 +17,90 @@ function getComputerChoice() {
     }
 }
 
+const result = document.querySelector(".result");
+const resultText = document.createElement("span");
+
 let humanChoice = "";
-function getHumanChoice(){
-    humanChoice = prompt("Rock, Paper, or Scissors?");
-    return humanChoice.toLowerCase();
-}
+const btn = document.querySelectorAll("button");
+btn.forEach((button) => {
+    button.addEventListener("click", () => {
+
+    switch(button.id){
+        case "rock":
+            rockCom.classList.toggle("visible");
+            round(getComputerChoice(), "rock");
+            break;
+
+        case "paper":
+            paperCom.classList.toggle("visible");
+            round(getComputerChoice(), "paper");
+            break;
+
+        case "scissors":
+            scissorsCom.classList.toggle("visible");
+            round(getComputerChoice(), "scissors");
+            break;
+    }
+    });
+
+});
 
 let humanScore = 0;
 let computerScore = 0;
 
 function round(com, hum){
+
+
     switch(hum){
         case "rock": 
             if(com == "rock"){
-                console.log("Its a tie!");
+                resultText.textContent = "It's a tie!"
+                
             } else if(com == "paper"){
-                console.log("Paper beats rock, you lose!");
+                resultText.textContent = "Paper beats rock, you lose!";
                 computerScore++;
             } else if(com == "scissors"){
-                console.log("Rock beats scissors, you win!");
+                resultText.textContent = "Rock beats scissors, you win!";
                 humanScore++;
             } else {
-                console.log("invalid choice");
+                resultText.textContent = "invalid choice";
             }
             showScore();
             break;
         case "scissors":
             if(com == "rock"){
-                console.log("Rock beats scissors, you lose!");
+                resultText.textContent = "Rock beats scissors, you lose!";
                 computerScore++;
             } else if(com == "paper"){
-                console.log("Scissors beats paper, you win!");
+                resultText.textContent = "Scissors beats paper, you win!";
                 humanScore++;
             } else if(com == "scissors"){
-                console.log("It's a tie!");
+                resultText.textContent ="It's a tie!";
             } else {
-                console.log("invalid choice");
+                resultText.textContent = "invalid choice";
             }
             showScore();
             break;
         case "paper":
             if(com == "rock"){
-                console.log("Paper beats rock, you win!");
+                resultText.textContent = "Paper beats rock, you win!";
                 humanScore++;
             } else if(com == "paper"){
-                console.log("It's a tie!");
+                resultText.textContent = "It's a tie!";
             } else if(com == "scissors"){
-                console.log("Scissors beats paper, you lose!");
+                resultText.textContent = "Scissors beats paper, you lose!";
                 computerScore++;
             } else {
-                console.log("invalid choice");
+                resultText.textContent = "invalid choice";
             }
             showScore();
             break;
         default:
-            console.log("invalid choice");
-    }
+           resultText.textContent = "invalid choice hoe";
 
+    }
+    console.log(resultText);
+    result.appendChild(resultText);
 }
 
 function showScore(){
@@ -92,4 +124,5 @@ function playGame(){
     }
 }
 
-playGame();
+
+// switch selector

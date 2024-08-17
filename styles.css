@@ -8,3 +8,45 @@
 #title {
     text-align: center;
 }
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    gap: 50px;
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.rockCom {
+    display: none;
+}
+
+.paperCom {
+    display: none;
+}
+
+.scissorsCom {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
